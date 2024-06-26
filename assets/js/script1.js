@@ -1,6 +1,6 @@
-function showPasswordInput() {
-    var passwordContainer = document.getElementById('password-container');
-    passwordContainer.style.display = 'block';
+function showPasswordPopup() {
+    var passwordPopup = document.getElementById('password-popup');
+    passwordPopup.style.display = 'block';
 }
 
 function checkPassword() {
@@ -10,6 +10,6 @@ function checkPassword() {
     if (btoa(password) === encodedPassword) {
         window.location.href = "../pages/mellon.html";
     } else {
-        errorMessage.textContent = "Woah, failed at something so simple? This wasn't even a riddle.";
+        errorMessage.textContent = "Wrong password. Try again.";
     }
 }
