@@ -71,23 +71,15 @@
         Your journey awaits, with challenges immense.</p>
 
         <div class="input-container">
-            <input type="password" id="password" placeholder="Enter password">
-            <img src="assets/images/durin.png" alt="Click to enter" onclick="checkPassword()">
-            <div id="error-message" class="error-message"></div>
+            <img src="assets/images/durin.png" alt="Click to enter" onclick="showPasswordInput()">
+            <div class="password-container" id="password-container">
+                <input type="password" id="password" placeholder="Password?">
+                <button onclick="checkPassword()">Enter</button>
+                <div id="error-message" class="error-message"></div>
+            </div>
         </div>
     </div>
 
-    <script>
-        function checkPassword() {
-            var password = document.getElementById('password').value;
-            var errorMessage = document.getElementById('error-message');
-            var encodedPassword = btoa("mellon"); // Encode the correct password
-            if (btoa(password) === encodedPassword) {
-                window.location.href = "assets/pages/mellon.html";
-            } else {
-                errorMessage.textContent = "Woah, failed at something so simple?";
-            }
-        }
-    </script>
+    <script src="assets/js/script1.js"></script>
 </body>
 </html>
