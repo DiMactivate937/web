@@ -27,28 +27,67 @@
             font-size: 18px;
             line-height: 1.6;
         }
-        .door-image {
+        .input-container {
             margin-top: 20px;
+            text-align: center;
         }
-        .door-image img {
-            width: 100%;
-            max-width: 400px;
+        .input-container input {
+            padding: 10px;
+            font-size: 16px;
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+        }
+        .input-container button {
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Your Treasure Hunt</h1>
-        <p>Greetings, adventurers! You've cracked the first code and found your way here. 
-        Your journey is just beginning, and many challenges lie ahead. 
-        Click the door below to start your first puzzle. Good luck!</p>
+        <h1>Ave Kerrit, ave Vlad!</h1>
+        
+        <p>Congratulations, you've cracked the Caesar's test,<br>
+        But that was merely the start, not the hardest quest.<br><br>
 
-        <div class="door-image">
-            <a href="assets/pages/1.html">
-                <img src="assets/images/door_image.jpg" alt="Click to start your first puzzle">
-            </a>
+        Ahead lies a path, all web-based and clear,<br>
+        Solve the riddles to proceed, with nothing to fear.<br>
+        Seek out the clues, and solve with care,<br>
+        Type in the answers, your adventure to share.<br><br>
+
+        Speak friend and enter, let the adventure commence,<br>
+        Your journey awaits, with challenges immense.</p>
+
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Enter password">
+            <img src="assets/images/mellon.png" alt="Click to enter" onclick="checkPassword()">
+            <div id="error-message" class="error-message"></div>
         </div>
     </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
+            var encodedPassword = btoa("mellon"); // Encode the correct password
+            if (btoa(password) === encodedPassword) {
+                window.location.href = "assets/pages/mellon.html";
+            } else {
+                errorMessage.textContent = "Woah, failed at something so simple?";
+            }
+        }
+    </script>
 </body>
 </html>
