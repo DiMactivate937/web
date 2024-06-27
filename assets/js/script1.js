@@ -1,15 +1,18 @@
-function showPasswordPopup() {
-    var passwordPopup = document.getElementById('password-popup');
-    passwordPopup.style.display = 'block';
+function showPasswordPrompt() {
+    var password = prompt("Enter password:");
+    if (password !== null) {
+        checkPassword(password);
+    }
 }
 
-function checkPassword() {
-    var password = document.getElementById('password').value;
+function checkPassword(password) {
     var errorMessage = document.getElementById('error-message');
-    var encodedPassword = btoa("mellon"); // Encode the correct password
+    var encodedPassword = "bWVsbG9u";
+    var encodedUrl = "bWVsbG9uLmh0bWw=";
+
     if (btoa(password) === encodedPassword) {
-        window.location.href = "../pages/mellon.html";
+        window.location.href = atob(encodedUrl);
     } else {
-        errorMessage.textContent = "Wrong password. Try again.";
+        errorMessage.textContent = "Woah, failed already? It was more than obvious...";
     }
 }
