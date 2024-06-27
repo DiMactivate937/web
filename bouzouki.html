@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Puzzle</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .puzzle-image {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+        }
+        .download-link {
+            margin-top: 20px;
+            font-size: 18px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Second Puzzle</h1>
+        <p class="italic-text">In sound you hear, a secret lies,</p>
+        <p class="italic-text">A hidden clue, in waves and ties.</p>
+        <p class="italic-text">Download the file, and listen well,</p>
+        <p class="italic-text">The secret message, it will tell.</p>
+        <img src="assets/images/bouzouki.png" alt="Click to play" class="puzzle-image" onclick="playAudio()">
+		<a href="assets/audio/bakirtzis.wav" download class="download-link">Download the audio file</a>
+    </div>
+
+    <audio id="puzzleAudio" src="assets/audio/bakirtzis.wav"></audio>
+
+    <!-- Clue: Use SilentEye to extract the hidden message from the audio file. -->
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById('puzzleAudio');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
