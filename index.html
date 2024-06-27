@@ -29,29 +29,56 @@
             line-height: 1.6;
         }
         .door-image {
-            width: 50%; /* Adjust the image size here */
-            max-width: 300px; /* Maximum width of the image */
+            width: 50%;
+            max-width: 300px;
             cursor: pointer;
         }
         .error-message {
             color: red;
             margin-top: 10px;
         }
-        .italic-text {
-            font-style: italic;
+        .password-popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .password-popup input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: calc(100% - 22px);
+        }
+        .password-popup button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .password-popup button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Ave Kerrit, ave Vlad!</h1>
-		
-        <p class="italic-text">Congratulations for cracking the test of the Caesar,<br>
+        
+        <p>Congratulations for cracking the test of the Caesar,<br>
         it was not the hard part, but merely a teaser.<br><br>
 
         Ahead lies a path, web-based and clear,<br>
         solve the riddles to proceed, there's nothing to fear.<br><br>
-		
+        
         Follow the links, with puzzles to explore,<br>
         type the right address as the key to each door.<br><br>
 
@@ -59,10 +86,14 @@
         speak friend and enter, let the adventure commence.</p>
 
         <div class="input-container">
-            <img src="assets/images/door.png" alt="Click to enter" class="door-image" onclick="showPasswordPrompt()">
+            <img src="assets/images/door.png" alt="Click to enter" class="door-image" onclick="showPasswordPopup()">
         </div>
 
-        <div id="error-message" class="error-message"></div>
+        <div class="password-popup" id="password-popup">
+            <input type="password" id="password" placeholder="Enter password">
+            <button onclick="checkPassword()">Enter</button>
+            <div id="error-message" class="error-message"></div>
+        </div>
     </div>
 
     <script src="assets/js/script1.js"></script>
