@@ -6,11 +6,9 @@ function showPasswordPopup() {
 function checkPassword() {
 	var password = document.getElementById('password').value;
 	var errorMessage = document.getElementById('error-message');
-	var encodedPassword = "bWVsbG9u";
-	var encodedUrl = "Ym91em91a2kuaHRtbA==";
 
-	if (btoa(password) === encodedPassword) {
-		window.location.href = atob(encodedUrl);
+	if (btoa(password) === "bWVsbG9u") {
+		window.location.href = atob("bWVsbG9uLmh0bWw=");
 	} else {
 		errorMessage.textContent = "Woah, failed already? It was more than obvious...";
 	}
