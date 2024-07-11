@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second Puzzle</title>
+    <title>Stage IV</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
@@ -16,6 +16,7 @@
         .container {
             max-width: 600px;
             margin: auto;
+			background-image: url('assets/images/background.png');
             background: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -44,18 +45,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Second Puzzle</h1>
-        <p class="italic-text">In sound you hear, a secret lies,</p>
-        <p class="italic-text">A hidden clue, in waves and ties.</p>
-        <p class="italic-text">Download the file, and listen well,</p>
-        <p class="italic-text">The secret message, it will tell.</p>
+        <h1>It could be worse.</h1>
+		<p>Histiaeus:</p>
+        <p class="italic-text">When thou art come to Miletus, bid Aristagoras shave thy head, and look thereon.</p>
+		<p>Slave:</p>
+        <p class="italic-text">But how, your grace?</p>
+		<p>Histiaeus:</p>
+        <p class="italic-text">With a silent eye.</p>
         <img src="assets/images/bouzouki.png" alt="Click to play" class="puzzle-image" onclick="playAudio()">
-		<a href="assets/audio/bakirtzis.wav" download class="download-link">Download the audio file</a>
     </div>
 
     <audio id="puzzleAudio" src="assets/audio/bakirtzis.wav"></audio>
 
-    <!-- Clue: Use SilentEye to extract the hidden message from the audio file. -->
+    <!-- Nothing to see here. -->
 
     <script>
         function playAudio() {
